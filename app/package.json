@@ -2,22 +2,27 @@
   "name": "app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "node dist/app.js",
     "build": "tsc",
-    "dev": "nodemon src/index.ts --watch src --exec ts-node"
+    "dev": "nodemon src/app.ts --watch src --exec ts-node"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2"
+    "@codegenie/serverless-express": "^4.16.0",
+    "express": "^4.21.2",
+    "reflect-metadata": "^0.2.2",
+    "routing-controllers": "^0.10.4"
   },
   "devDependencies": {
+    "@types/aws-lambda": "^8.10.146",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
     "nodemon": "^3.1.9",
+    "serverless-offline": "^14.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.2"
   }
