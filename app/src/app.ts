@@ -2,6 +2,7 @@ import express from "express";
 import { useExpressServer } from "routing-controllers";
 import { UserController } from "./controllers/userController";
 import "reflect-metadata";
+
 const app = express();
 const port = 3000;
 
