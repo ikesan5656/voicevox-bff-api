@@ -7,11 +7,16 @@ import {
   Post,
   Put,
   Delete,
+  UseBefore,
+  HttpCode,
 } from "routing-controllers";
+import { checkJwt } from "../utils/auth0";
 
 @JsonController()
+@UseBefore(checkJwt)
 export class UserController {
   @Get("/users")
+  @HttpCode(200)
   getUserAll() {
     return "This action returns all users";
   }
