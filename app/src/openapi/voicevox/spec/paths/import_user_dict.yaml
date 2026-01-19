@@ -1,6 +1,6 @@
 post:
   tags:
-    - ユーザー辞書
+    - user_dict_word
   summary: Import User Dict Words
   description: 他のユーザー辞書をインポートします。
   operationId: import_user_dict_words

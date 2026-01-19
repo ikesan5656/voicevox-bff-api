@@ -1,6 +1,6 @@
 get:
   tags:
-    - その他
+    - other
   summary: Supported Devices
   description: 対応デバイスの一覧を取得します。
   operationId: supported_devices

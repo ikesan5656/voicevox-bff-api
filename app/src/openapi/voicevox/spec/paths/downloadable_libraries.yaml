@@ -1,6 +1,6 @@
 get:
   tags:
-    - 音声ライブラリ管理
+    - music_library_management
   summary: Downloadable Libraries
   description: ダウンロード可能な音声ライブラリの情報を返します。
   operationId: downloadable_libraries

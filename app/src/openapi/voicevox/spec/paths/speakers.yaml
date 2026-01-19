@@ -1,6 +1,6 @@
 get:
   tags:
-    - その他
+    - other
   summary: Speakers
   description: 喋れるキャラクターの情報の一覧を返します。
   operationId: speakers

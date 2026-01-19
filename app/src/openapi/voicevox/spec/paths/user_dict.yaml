@@ -1,6 +1,6 @@
 get:
   tags:
-    - ユーザー辞書
+    - user_dict_word
   summary: Get User Dict Words
   description: |-
     ユーザー辞書に登録されている単語の一覧を返します。

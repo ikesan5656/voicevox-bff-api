@@ -1,6 +1,6 @@
 get:
   tags:
-    - その他
+    - other
   summary: Get Portal Page
   description: ポータルページを返します。
   operationId: get_portal_page

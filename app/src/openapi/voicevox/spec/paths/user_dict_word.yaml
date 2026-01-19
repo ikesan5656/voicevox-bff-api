@@ -1,6 +1,6 @@
 post:
   tags:
-    - ユーザー辞書
+    - user_dict_word
   summary: Add User Dict Word
   description: ユーザー辞書に言葉を追加します。
   operationId: add_user_dict_word

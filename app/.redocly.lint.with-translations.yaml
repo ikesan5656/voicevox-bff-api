@@ -1,0 +1,13 @@
+# .redocly.lint.with-translations.yaml
+plugins:
+  - "./scripts/redocly-tags-plugin.js" # 後述するカスタムスクリプトを読み込む
+decorators:
+  custom/translate-tags:
+    mapping:
+      "クエリ作成": "create_query"
+      "クエリ編集": "edit_query"
+      "音声合成": "speech_synthesis"
+      "その他": "other"
+      "音声ライブラリ管理": "music_library_management"
+      "ユーザー辞書": "user_dict_word"
+      "設定": "setting"

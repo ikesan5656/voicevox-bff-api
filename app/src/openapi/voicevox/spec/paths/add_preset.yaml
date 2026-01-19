@@ -1,6 +1,6 @@
 post:
   tags:
-    - その他
+    - other
   summary: Add Preset
   description: 新しいプリセットを追加します。
   operationId: add_preset

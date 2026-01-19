@@ -1,6 +1,6 @@
 post:
   tags:
-    - クエリ編集
+    - edit_query
   summary: 楽譜・歌唱音声合成用のクエリからフレームごとの基本周波数を得る
   operationId: sing_frame_f0
   parameters:

@@ -1,6 +1,6 @@
 post:
   tags:
-    - 音声合成
+    - speech_synthesis
   summary: 複数まとめて音声合成する
   operationId: multi_synthesis
   parameters:

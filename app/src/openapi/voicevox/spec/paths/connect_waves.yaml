@@ -1,6 +1,6 @@
 post:
   tags:
-    - その他
+    - other
   summary: base64エンコードされた複数のwavデータを一つに結合する
   description: base64エンコードされたwavデータを一纏めにし、wavファイルで返します。
   operationId: connect_waves

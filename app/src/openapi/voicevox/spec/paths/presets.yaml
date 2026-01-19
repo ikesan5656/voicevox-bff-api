@@ -1,6 +1,6 @@
 get:
   tags:
-    - その他
+    - other
   summary: Get Presets
   description: エンジンが保持しているプリセットの設定を返します。
   operationId: get_presets

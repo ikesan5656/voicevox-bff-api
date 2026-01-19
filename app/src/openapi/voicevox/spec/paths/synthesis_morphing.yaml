@@ -1,6 +1,6 @@
 post:
   tags:
-    - 音声合成
+    - speech_synthesis
   summary: 2種類のスタイルでモーフィングした音声を合成する
   description: |-
     指定された2種類のスタイルで音声を合成、指定した割合でモーフィングした音声を得ます。

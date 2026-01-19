@@ -1,6 +1,6 @@
 post:
   tags:
-    - その他
+    - other
   summary: Initialize Speaker
   description: |-
     指定されたスタイルを初期化します。

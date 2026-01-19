@@ -1,6 +1,6 @@
 post:
   tags:
-    - その他
+    - other
   summary: Update Preset
   description: 既存のプリセットを更新します。
   operationId: update_preset

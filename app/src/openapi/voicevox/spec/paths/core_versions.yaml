@@ -1,6 +1,6 @@
 get:
   tags:
-    - その他
+    - other
   summary: Core Versions
   description: 利用可能なコアのバージョン一覧を取得します。
   operationId: core_versions

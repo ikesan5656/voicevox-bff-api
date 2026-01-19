@@ -1,6 +1,6 @@
 get:
   tags:
-    - その他
+    - other
   summary: Singer Info
   description: |-
     UUID で指定された歌えるキャラクターの情報を返します。

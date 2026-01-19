@@ -1,6 +1,6 @@
 post:
   tags:
-    - 音声ライブラリ管理
+    - music_library_management
   summary: Install Library
   description: |-
     音声ライブラリをインストールします。

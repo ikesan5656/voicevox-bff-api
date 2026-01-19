@@ -1,6 +1,6 @@
 post:
   tags:
-    - クエリ編集
+    - edit_query
   summary: アクセント句から音高を得る
   operationId: mora_pitch
   parameters:

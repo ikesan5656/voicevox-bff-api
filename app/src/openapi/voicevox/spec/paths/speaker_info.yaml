@@ -1,6 +1,6 @@
 get:
   tags:
-    - その他
+    - other
   summary: Speaker Info
   description: |-
     UUID で指定された喋れるキャラクターの情報を返します。

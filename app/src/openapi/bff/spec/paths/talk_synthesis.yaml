@@ -1,8 +1,8 @@
 post:
   tags:
-    - 音声合成
+    - synthesis
   summary: 音声合成する（トーク）
-  operationId: synthesis
+  operationId: synthesis_talk
   parameters:
     - name: text
       in: query

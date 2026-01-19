@@ -1,6 +1,6 @@
 get:
   tags:
-    - その他
+    - other
   summary: Version
   description: エンジンのバージョンを取得します。
   operationId: version

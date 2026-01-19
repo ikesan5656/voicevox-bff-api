@@ -1,6 +1,6 @@
 post:
   tags:
-    - クエリ作成
+    - create_query
   summary: 音声合成用のクエリを作成する
   description: 音声合成用のクエリの初期値を得ます。ここで得られたクエリはそのまま音声合成に利用できます。各値の意味は`Schemas`を参照してください。
   operationId: audio_query

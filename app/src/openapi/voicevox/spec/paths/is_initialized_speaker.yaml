@@ -1,6 +1,6 @@
 get:
   tags:
-    - その他
+    - other
   summary: Is Initialized Speaker
   description: 指定されたスタイルが初期化されているかどうかを返します。
   operationId: is_initialized_speaker

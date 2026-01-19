@@ -1,6 +1,6 @@
 post:
   tags:
-    - クエリ編集
+    - edit_query
   summary: テキストからアクセント句を得る
   description: |-
     テキストからアクセント句を得ます。

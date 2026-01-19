@@ -1,6 +1,6 @@
 get:
   tags:
-    - その他
+    - other
   summary: Singers
   description: 歌えるキャラクターの情報の一覧を返します。
   operationId: singers

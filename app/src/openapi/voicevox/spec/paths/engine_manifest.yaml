@@ -1,6 +1,6 @@
 get:
   tags:
-    - その他
+    - other
   summary: Engine Manifest
   description: エンジンマニフェストを取得します。
   operationId: engine_manifest

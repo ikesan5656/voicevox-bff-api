@@ -1,6 +1,6 @@
 post:
   tags:
-    - 音声合成
+    - speech_synthesis
   summary: Frame Synthesis
   description: 歌唱音声合成を行います。
   operationId: frame_synthesis
