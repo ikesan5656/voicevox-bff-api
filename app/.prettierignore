@@ -1,6 +1,7 @@
 node_modules
 .vscode/*
 *.yml
+*.yaml
 build
 dist
 dist-ssr
