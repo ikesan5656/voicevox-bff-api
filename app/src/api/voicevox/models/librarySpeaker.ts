@@ -5,8 +5,8 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { Speaker } from './speaker';
-import type { SpeakerInfo } from './speakerInfo';
+import type { Speaker } from "./speaker";
+import type { SpeakerInfo } from "./speakerInfo";
 
 /**
  * 音声ライブラリに含まれるキャラクターの情報。

@@ -9,4 +9,4 @@
 /**
  * エラーを起こした箇所
  */
-export type ParseKanaBadRequestErrorArgs = {[key: string]: string};
+export type ParseKanaBadRequestErrorArgs = { [key: string]: string };

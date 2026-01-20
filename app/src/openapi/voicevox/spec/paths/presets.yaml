@@ -5,7 +5,7 @@ get:
   description: エンジンが保持しているプリセットの設定を返します。
   operationId: get_presets
   responses:
-    '200':
+    "200":
       description: プリセットのリスト
       content:
         application/json:

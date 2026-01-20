@@ -5,7 +5,7 @@ get:
   description: 利用可能なコアのバージョン一覧を取得します。
   operationId: core_versions
   responses:
-    '200':
+    "200":
       description: Successful Response
       content:
         application/json:

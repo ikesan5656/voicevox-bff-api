@@ -24,13 +24,13 @@ post:
         schema:
           $ref: ../components/schemas/Score.yaml
   responses:
-    '200':
+    "200":
       description: Successful Response
       content:
         application/json:
           schema:
             $ref: ../components/schemas/FrameAudioQuery.yaml
-    '422':
+    "422":
       description: Validation Error
       content:
         application/json:

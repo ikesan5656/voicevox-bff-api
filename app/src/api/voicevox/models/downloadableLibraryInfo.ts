@@ -5,7 +5,7 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { LibrarySpeaker } from './librarySpeaker';
+import type { LibrarySpeaker } from "./librarySpeaker";
 
 /**
  * ダウンロード可能な音声ライブラリの情報。

@@ -5,33 +5,25 @@
  * VOICEVOXのBFF
  * OpenAPI spec version: latest
  */
-import axios from 'axios';
-import type {
-  AxiosRequestConfig,
-  AxiosResponse
-} from 'axios';
+import axios from "axios";
+import type { AxiosRequestConfig, AxiosResponse } from "axios";
 
-import type {
-  SynthesisTalkParams
-} from '../models';
+import type { SynthesisTalkParams } from "../models";
 
-
-
-
-
-  export const getSynthesis = () => {
-/**
- * @summary 音声合成する（トーク）
- */
-const synthesisTalk = <TData = AxiosResponse<Blob>>(
-    params: SynthesisTalkParams, options?: AxiosRequestConfig
- ): Promise<TData> => {
-    return axios.post(
-      `/talk_synthesis`,undefined,{
-        responseType: 'blob',
-    ...options,
-        params: {...params, ...options?.params},}
-    );
-  }
-return {synthesisTalk}};
-export type SynthesisTalkResult = AxiosResponse<Blob>
+export const getSynthesis = () => {
+  /**
+   * @summary 音声合成する（トーク）
+   */
+  const synthesisTalk = <TData = AxiosResponse<Blob>>(
+    params: SynthesisTalkParams,
+    options?: AxiosRequestConfig
+  ): Promise<TData> => {
+    return axios.post(`/talk_synthesis`, undefined, {
+      responseType: "blob",
+      ...options,
+      params: { ...params, ...options?.params },
+    });
+  };
+  return { synthesisTalk };
+};
+export type SynthesisTalkResult = AxiosResponse<Blob>;

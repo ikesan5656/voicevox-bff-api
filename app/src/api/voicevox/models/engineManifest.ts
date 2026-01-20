@@ -5,9 +5,9 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { LicenseInfo } from './licenseInfo';
-import type { SupportedFeatures } from './supportedFeatures';
-import type { UpdateInfo } from './updateInfo';
+import type { LicenseInfo } from "./licenseInfo";
+import type { SupportedFeatures } from "./supportedFeatures";
+import type { UpdateInfo } from "./updateInfo";
 
 /**
  * エンジン自体に関する情報。

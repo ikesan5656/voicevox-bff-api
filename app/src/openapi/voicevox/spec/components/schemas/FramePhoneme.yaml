@@ -10,7 +10,7 @@ properties:
   note_id:
     anyOf:
       - type: string
-      - type: 'null'
+      - type: "null"
     title: Note Id
     description: 音符のID
 type: object

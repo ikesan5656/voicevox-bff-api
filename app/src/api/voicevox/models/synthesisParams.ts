@@ -7,10 +7,10 @@
  */
 
 export type SynthesisParams = {
-speaker: number;
-/**
- * 疑問系のテキストが与えられたら語尾を自動調整する
- */
-enable_interrogative_upspeak?: boolean;
-core_version?: string;
+  speaker: number;
+  /**
+   * 疑問系のテキストが与えられたら語尾を自動調整する
+   */
+  enable_interrogative_upspeak?: boolean;
+  core_version?: string;
 };

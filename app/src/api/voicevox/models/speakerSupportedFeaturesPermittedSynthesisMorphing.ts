@@ -9,11 +9,11 @@
 /**
  * モーフィング機能への対応。'ALL' は「全て許可」、'SELF_ONLY' は「同じキャラクター内でのみ許可」、'NOTHING' は「全て禁止」
  */
-export type SpeakerSupportedFeaturesPermittedSynthesisMorphing = typeof SpeakerSupportedFeaturesPermittedSynthesisMorphing[keyof typeof SpeakerSupportedFeaturesPermittedSynthesisMorphing];
-
+export type SpeakerSupportedFeaturesPermittedSynthesisMorphing =
+  (typeof SpeakerSupportedFeaturesPermittedSynthesisMorphing)[keyof typeof SpeakerSupportedFeaturesPermittedSynthesisMorphing];
 
 export const SpeakerSupportedFeaturesPermittedSynthesisMorphing = {
-  ALL: 'ALL',
-  SELF_ONLY: 'SELF_ONLY',
-  NOTHING: 'NOTHING',
+  ALL: "ALL",
+  SELF_ONLY: "SELF_ONLY",
+  NOTHING: "NOTHING",
 } as const;

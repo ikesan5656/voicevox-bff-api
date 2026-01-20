@@ -5,7 +5,7 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { SpeakerSupportedFeaturesPermittedSynthesisMorphing } from './speakerSupportedFeaturesPermittedSynthesisMorphing';
+import type { SpeakerSupportedFeaturesPermittedSynthesisMorphing } from "./speakerSupportedFeaturesPermittedSynthesisMorphing";
 
 /**
  * キャラクターの対応機能の情報

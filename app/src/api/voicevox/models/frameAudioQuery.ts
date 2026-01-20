@@ -5,7 +5,7 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { FramePhoneme } from './framePhoneme';
+import type { FramePhoneme } from "./framePhoneme";
 
 /**
  * フレームごとの音声合成用のクエリ。

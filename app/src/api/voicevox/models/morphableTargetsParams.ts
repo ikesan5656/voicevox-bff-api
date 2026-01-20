@@ -7,5 +7,5 @@
  */
 
 export type MorphableTargetsParams = {
-core_version?: string;
+  core_version?: string;
 };

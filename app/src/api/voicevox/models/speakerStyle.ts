@@ -5,7 +5,7 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { SpeakerStyleType } from './speakerStyleType';
+import type { SpeakerStyleType } from "./speakerStyleType";
 
 /**
  * キャラクターのスタイル情報

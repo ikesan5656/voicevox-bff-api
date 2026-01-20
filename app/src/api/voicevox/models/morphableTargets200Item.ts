@@ -5,6 +5,6 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { MorphableTargetInfo } from './morphableTargetInfo';
+import type { MorphableTargetInfo } from "./morphableTargetInfo";
 
-export type MorphableTargets200Item = {[key: string]: MorphableTargetInfo};
+export type MorphableTargets200Item = { [key: string]: MorphableTargetInfo };

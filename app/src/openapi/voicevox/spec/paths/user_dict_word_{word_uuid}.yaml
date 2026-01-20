@@ -57,9 +57,9 @@ put:
         title: Priority
       description: 単語の優先度（0から10までの整数）。数字が大きいほど優先度が高くなる。1から9までの値を指定することを推奨。
   responses:
-    '204':
+    "204":
       description: Successful Response
-    '422':
+    "422":
       description: Validation Error
       content:
         application/json:
@@ -81,9 +81,9 @@ delete:
         title: Word Uuid
       description: 削除する言葉のUUID
   responses:
-    '204':
+    "204":
       description: Successful Response
-    '422':
+    "422":
       description: Validation Error
       content:
         application/json:

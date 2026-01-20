@@ -7,16 +7,16 @@
  */
 
 export type SynthesisMorphingParams = {
-base_speaker: number;
-target_speaker: number;
-/**
- * @minimum 0
- * @maximum 1
- */
-morph_rate: number;
-/**
- * 疑問系のテキストが与えられたら語尾を自動調整する
- */
-enable_interrogative_upspeak?: boolean;
-core_version?: string;
+  base_speaker: number;
+  target_speaker: number;
+  /**
+   * @minimum 0
+   * @maximum 1
+   */
+  morph_rate: number;
+  /**
+   * 疑問系のテキストが与えられたら語尾を自動調整する
+   */
+  enable_interrogative_upspeak?: boolean;
+  core_version?: string;
 };

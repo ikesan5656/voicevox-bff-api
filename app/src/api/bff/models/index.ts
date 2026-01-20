@@ -6,5 +6,5 @@
  * OpenAPI spec version: latest
  */
 
-export * from './synthesisTalk400';
-export * from './synthesisTalkParams';
+export * from "./synthesisTalk400";
+export * from "./synthesisTalkParams";

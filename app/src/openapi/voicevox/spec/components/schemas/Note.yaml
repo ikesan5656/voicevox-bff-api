@@ -2,7 +2,7 @@ properties:
   id:
     anyOf:
       - type: string
-      - type: 'null'
+      - type: "null"
     title: Id
     description: ID
   key:

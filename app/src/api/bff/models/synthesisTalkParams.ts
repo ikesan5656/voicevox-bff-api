@@ -7,12 +7,12 @@
  */
 
 export type SynthesisTalkParams = {
-text: string;
-speaker: number;
-/**
- * 疑問系のテキストが与えられたら語尾を自動調整する
- */
-enable_interrogative_upspeak?: boolean;
-enable_katakana_english?: boolean;
-core_version?: string;
+  text: string;
+  speaker: number;
+  /**
+   * 疑問系のテキストが与えられたら語尾を自動調整する
+   */
+  enable_interrogative_upspeak?: boolean;
+  enable_katakana_english?: boolean;
+  core_version?: string;
 };

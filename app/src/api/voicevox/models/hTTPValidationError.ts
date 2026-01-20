@@ -5,7 +5,7 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { ValidationError } from './validationError';
+import type { ValidationError } from "./validationError";
 
 export interface HTTPValidationError {
   detail?: ValidationError[];

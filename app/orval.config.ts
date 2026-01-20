@@ -10,6 +10,7 @@ export default defineConfig({
       target: "src/api/bff/endpoints",
       schemas: "src/api/bff/models",
       clean: true,
+      prettier: true,
       client: "axios",
     },
   },
@@ -37,6 +38,7 @@ export default defineConfig({
       target: "src/api/voicevox/synthesis/endpoints",
       schemas: "src/api/voicevox/models",
       clean: true,
+      prettier: true,
       client: "axios-functions", // axiosだとファクトリ関数が作られてしまう
       override: {},
     },

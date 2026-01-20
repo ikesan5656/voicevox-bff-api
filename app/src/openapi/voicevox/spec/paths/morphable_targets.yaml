@@ -29,7 +29,7 @@ post:
             type: integer
           title: Base Style Ids
   responses:
-    '200':
+    "200":
       description: Successful Response
       content:
         application/json:
@@ -40,7 +40,7 @@ post:
               additionalProperties:
                 $ref: ../components/schemas/MorphableTargetInfo.yaml
             title: Response Morphable Targets Morphable Targets Post
-    '422':
+    "422":
       description: Validation Error
       content:
         application/json:

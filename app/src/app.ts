@@ -2,10 +2,7 @@ import path from "path";
 import dotenv from "dotenv";
 
 // NODE_ENVの設定に基づいて.envファイルを選択
-const envFile = path.resolve(
-  __dirname,
-  `../envs/.env.${process.env.NODE_ENV}.local`
-);
+const envFile = path.resolve(__dirname, `../envs/.env.${process.env.NODE_ENV}.local`);
 // 環境変数を読み込み
 dotenv.config({ path: envFile });
 
@@ -38,9 +35,7 @@ useExpressServer(app, {
 // エラーハンドリング
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.error("エラーメッセージ:", err.message);
-  res
-    .status(err.status || 500)
-    .json({ message: err.message ?? "エラーが発生しました。" });
+  res.status(err.status || 500).json({ message: err.message ?? "エラーが発生しました。" });
 });
 
 // サーバー起動

@@ -5,7 +5,7 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { AccentPhrase } from './accentPhrase';
+import type { AccentPhrase } from "./accentPhrase";
 
 /**
  * 音声合成用のクエリ。

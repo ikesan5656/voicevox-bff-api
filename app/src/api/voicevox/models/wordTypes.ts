@@ -9,13 +9,12 @@
 /**
  * 品詞
  */
-export type WordTypes = typeof WordTypes[keyof typeof WordTypes];
-
+export type WordTypes = (typeof WordTypes)[keyof typeof WordTypes];
 
 export const WordTypes = {
-  PROPER_NOUN: 'PROPER_NOUN',
-  COMMON_NOUN: 'COMMON_NOUN',
-  VERB: 'VERB',
-  ADJECTIVE: 'ADJECTIVE',
-  SUFFIX: 'SUFFIX',
+  PROPER_NOUN: "PROPER_NOUN",
+  COMMON_NOUN: "COMMON_NOUN",
+  VERB: "VERB",
+  ADJECTIVE: "ADJECTIVE",
+  SUFFIX: "SUFFIX",
 } as const;

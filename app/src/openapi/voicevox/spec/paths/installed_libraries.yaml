@@ -5,7 +5,7 @@ get:
   description: インストールした音声ライブラリの情報を返します。
   operationId: installed_libraries
   responses:
-    '200':
+    "200":
       description: インストールした音声ライブラリの情報
       content:
         application/json:

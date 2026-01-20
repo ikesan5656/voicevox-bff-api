@@ -5,7 +5,7 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { Mora } from './mora';
+import type { Mora } from "./mora";
 
 /**
  * アクセント句ごとの情報。

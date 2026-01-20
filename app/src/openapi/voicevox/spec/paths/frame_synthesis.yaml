@@ -24,14 +24,14 @@ post:
         schema:
           $ref: ../components/schemas/FrameAudioQuery.yaml
   responses:
-    '200':
+    "200":
       description: Successful Response
       content:
         audio/wav:
           schema:
             type: string
             format: binary
-    '422':
+    "422":
       description: Validation Error
       content:
         application/json:

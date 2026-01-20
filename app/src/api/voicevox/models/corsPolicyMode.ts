@@ -9,10 +9,9 @@
 /**
  * CORSの許可モード。
  */
-export type CorsPolicyMode = typeof CorsPolicyMode[keyof typeof CorsPolicyMode];
-
+export type CorsPolicyMode = (typeof CorsPolicyMode)[keyof typeof CorsPolicyMode];
 
 export const CorsPolicyMode = {
-  all: 'all',
-  localapps: 'localapps',
+  all: "all",
+  localapps: "localapps",
 } as const;

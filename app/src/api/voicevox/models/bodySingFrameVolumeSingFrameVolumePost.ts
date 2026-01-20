@@ -5,8 +5,8 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { FrameAudioQuery } from './frameAudioQuery';
-import type { Score } from './score';
+import type { FrameAudioQuery } from "./frameAudioQuery";
+import type { Score } from "./score";
 
 export interface BodySingFrameVolumeSingFrameVolumePost {
   score: Score;

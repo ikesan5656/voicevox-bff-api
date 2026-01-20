@@ -5,7 +5,7 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { ParseKanaBadRequestErrorArgs } from './parseKanaBadRequestErrorArgs';
+import type { ParseKanaBadRequestErrorArgs } from "./parseKanaBadRequestErrorArgs";
 
 /**
  * 読み仮名のパースに失敗した。

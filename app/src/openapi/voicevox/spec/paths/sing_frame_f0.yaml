@@ -23,7 +23,7 @@ post:
         schema:
           $ref: ../components/schemas/Body_sing_frame_f0_sing_frame_f0_post.yaml
   responses:
-    '200':
+    "200":
       description: Successful Response
       content:
         application/json:
@@ -32,7 +32,7 @@ post:
             items:
               type: number
             title: Response Sing Frame F0 Sing Frame F0 Post
-    '422':
+    "422":
       description: Validation Error
       content:
         application/json:

@@ -14,9 +14,9 @@ post:
         title: Library Uuid
       description: 音声ライブラリのID
   responses:
-    '204':
+    "204":
       description: Successful Response
-    '422':
+    "422":
       description: Validation Error
       content:
         application/json:

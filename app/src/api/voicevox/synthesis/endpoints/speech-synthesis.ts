@@ -5,11 +5,8 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import axios from 'axios';
-import type {
-  AxiosRequestConfig,
-  AxiosResponse
-} from 'axios';
+import axios from "axios";
+import type { AxiosRequestConfig, AxiosResponse } from "axios";
 
 import type {
   AudioQuery,
@@ -20,74 +17,66 @@ import type {
   MorphableTargetsParams,
   MultiSynthesisParams,
   SynthesisMorphingParams,
-  SynthesisParams
-} from '../../models';
+  SynthesisParams,
+} from "../../models";
 
-
-
-
-
-  /**
+/**
  * @summary 音声合成する
  */
 export const synthesis = <TData = AxiosResponse<Blob>>(
-    audioQuery: AudioQuery,
-    params: SynthesisParams, options?: AxiosRequestConfig
- ): Promise<TData> => {
-    return axios.post(
-      `/synthesis`,
-      audioQuery,{
-        responseType: 'blob',
+  audioQuery: AudioQuery,
+  params: SynthesisParams,
+  options?: AxiosRequestConfig
+): Promise<TData> => {
+  return axios.post(`/synthesis`, audioQuery, {
+    responseType: "blob",
     ...options,
-        params: {...params, ...options?.params},}
-    );
-  }
+    params: { ...params, ...options?.params },
+  });
+};
 /**
  * @summary 音声合成する（キャンセル可能）
  */
 export const cancellableSynthesis = <TData = AxiosResponse<Blob>>(
-    audioQuery: AudioQuery,
-    params: CancellableSynthesisParams, options?: AxiosRequestConfig
- ): Promise<TData> => {
-    return axios.post(
-      `/cancellable_synthesis`,
-      audioQuery,{
-        responseType: 'blob',
+  audioQuery: AudioQuery,
+  params: CancellableSynthesisParams,
+  options?: AxiosRequestConfig
+): Promise<TData> => {
+  return axios.post(`/cancellable_synthesis`, audioQuery, {
+    responseType: "blob",
     ...options,
-        params: {...params, ...options?.params},}
-    );
-  }
+    params: { ...params, ...options?.params },
+  });
+};
 /**
  * @summary 複数まとめて音声合成する
  */
 export const multiSynthesis = <TData = AxiosResponse<Blob>>(
-    audioQuery: AudioQuery[],
-    params: MultiSynthesisParams, options?: AxiosRequestConfig
- ): Promise<TData> => {
-    return axios.post(
-      `/multi_synthesis`,
-      audioQuery,{
-        responseType: 'blob',
+  audioQuery: AudioQuery[],
+  params: MultiSynthesisParams,
+  options?: AxiosRequestConfig
+): Promise<TData> => {
+  return axios.post(`/multi_synthesis`, audioQuery, {
+    responseType: "blob",
     ...options,
-        params: {...params, ...options?.params},}
-    );
-  }
+    params: { ...params, ...options?.params },
+  });
+};
 /**
  * 歌唱音声合成を行います。
  * @summary Frame Synthesis
  */
 export const frameSynthesis = <TData = AxiosResponse<Blob>>(
-    frameAudioQuery: FrameAudioQuery,
-    params: FrameSynthesisParams, options?: AxiosRequestConfig
- ): Promise<TData> => {
-    return axios.post(
-      `/frame_synthesis`,
-      frameAudioQuery,{
-        responseType: 'blob',
+  frameAudioQuery: FrameAudioQuery,
+  params: FrameSynthesisParams,
+  options?: AxiosRequestConfig
+): Promise<TData> => {
+  return axios.post(`/frame_synthesis`, frameAudioQuery, {
+    responseType: "blob",
     ...options,
-        params: {...params, ...options?.params},}
-    );
-  }
+    params: { ...params, ...options?.params },
+  });
+};
 /**
  * 指定されたベーススタイルに対してエンジン内の各キャラクターがモーフィング機能を利用可能か返します。
 
@@ -97,16 +86,15 @@ export const frameSynthesis = <TData = AxiosResponse<Blob>>(
  * @summary 指定したスタイルに対してエンジン内のキャラクターがモーフィングが可能か判定する
  */
 export const morphableTargets = <TData = AxiosResponse<MorphableTargets200Item[]>>(
-    morphableTargetsBody: number[],
-    params?: MorphableTargetsParams, options?: AxiosRequestConfig
- ): Promise<TData> => {
-    return axios.post(
-      `/morphable_targets`,
-      morphableTargetsBody,{
+  morphableTargetsBody: number[],
+  params?: MorphableTargetsParams,
+  options?: AxiosRequestConfig
+): Promise<TData> => {
+  return axios.post(`/morphable_targets`, morphableTargetsBody, {
     ...options,
-        params: {...params, ...options?.params},}
-    );
-  }
+    params: { ...params, ...options?.params },
+  });
+};
 /**
  * 指定された2種類のスタイルで音声を合成、指定した割合でモーフィングした音声を得ます。
 
@@ -114,20 +102,19 @@ export const morphableTargets = <TData = AxiosResponse<MorphableTargets200Item[]
  * @summary 2種類のスタイルでモーフィングした音声を合成する
  */
 export const synthesisMorphing = <TData = AxiosResponse<Blob>>(
-    audioQuery: AudioQuery,
-    params: SynthesisMorphingParams, options?: AxiosRequestConfig
- ): Promise<TData> => {
-    return axios.post(
-      `/synthesis_morphing`,
-      audioQuery,{
-        responseType: 'blob',
+  audioQuery: AudioQuery,
+  params: SynthesisMorphingParams,
+  options?: AxiosRequestConfig
+): Promise<TData> => {
+  return axios.post(`/synthesis_morphing`, audioQuery, {
+    responseType: "blob",
     ...options,
-        params: {...params, ...options?.params},}
-    );
-  }
-export type SynthesisResult = AxiosResponse<Blob>
-export type CancellableSynthesisResult = AxiosResponse<Blob>
-export type MultiSynthesisResult = AxiosResponse<Blob>
-export type FrameSynthesisResult = AxiosResponse<Blob>
-export type MorphableTargetsResult = AxiosResponse<MorphableTargets200Item[]>
-export type SynthesisMorphingResult = AxiosResponse<Blob>
+    params: { ...params, ...options?.params },
+  });
+};
+export type SynthesisResult = AxiosResponse<Blob>;
+export type CancellableSynthesisResult = AxiosResponse<Blob>;
+export type MultiSynthesisResult = AxiosResponse<Blob>;
+export type FrameSynthesisResult = AxiosResponse<Blob>;
+export type MorphableTargetsResult = AxiosResponse<MorphableTargets200Item[]>;
+export type SynthesisMorphingResult = AxiosResponse<Blob>;

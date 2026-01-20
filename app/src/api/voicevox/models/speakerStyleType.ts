@@ -9,12 +9,11 @@
 /**
  * スタイルの種類。talk:音声合成クエリの作成と音声合成が可能。singing_teacher:歌唱音声合成用のクエリの作成が可能。frame_decode:歌唱音声合成が可能。sing:歌唱音声合成用のクエリの作成と歌唱音声合成が可能。
  */
-export type SpeakerStyleType = typeof SpeakerStyleType[keyof typeof SpeakerStyleType];
-
+export type SpeakerStyleType = (typeof SpeakerStyleType)[keyof typeof SpeakerStyleType];
 
 export const SpeakerStyleType = {
-  talk: 'talk',
-  singing_teacher: 'singing_teacher',
-  frame_decode: 'frame_decode',
-  sing: 'sing',
+  talk: "talk",
+  singing_teacher: "singing_teacher",
+  frame_decode: "frame_decode",
+  sing: "sing",
 } as const;

@@ -7,7 +7,7 @@
  */
 
 export type CancellableSynthesisParams = {
-speaker: number;
-enable_interrogative_upspeak?: boolean;
-core_version?: string;
+  speaker: number;
+  enable_interrogative_upspeak?: boolean;
+  core_version?: string;
 };

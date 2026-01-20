@@ -7,6 +7,6 @@
  */
 
 export type FrameSynthesisParams = {
-speaker: number;
-core_version?: string;
+  speaker: number;
+  core_version?: string;
 };

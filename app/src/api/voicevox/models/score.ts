@@ -5,7 +5,7 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { Note } from './note';
+import type { Note } from "./note";
 
 /**
  * 楽譜情報。

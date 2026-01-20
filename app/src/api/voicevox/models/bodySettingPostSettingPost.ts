@@ -5,7 +5,7 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import type { CorsPolicyMode } from './corsPolicyMode';
+import type { CorsPolicyMode } from "./corsPolicyMode";
 
 export interface BodySettingPostSettingPost {
   cors_policy_mode: CorsPolicyMode;
