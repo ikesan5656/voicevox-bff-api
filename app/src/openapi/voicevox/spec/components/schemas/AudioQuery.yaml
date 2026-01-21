@@ -32,7 +32,7 @@ properties:
   pauseLength:
     anyOf:
       - type: number
-      - type: "null"
+      - type: 'null'
     title: Pauselength
     description: 句読点などの無音時間。nullのときは無視される。デフォルト値はnull
   pauseLengthScale:
@@ -51,7 +51,7 @@ properties:
   kana:
     type: string
     title: Kana
-    description: "[読み取り専用]AquesTalk 風記法によるテキスト。音声合成用のクエリとしては無視される"
+    description: '[読み取り専用]AquesTalk 風記法によるテキスト。音声合成用のクエリとしては無視される'
 type: object
 required:
   - accent_phrases

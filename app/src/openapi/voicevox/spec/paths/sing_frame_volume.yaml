@@ -24,7 +24,7 @@ post:
           $ref: >-
             ../components/schemas/Body_sing_frame_volume_sing_frame_volume_post.yaml
   responses:
-    "200":
+    '200':
       description: Successful Response
       content:
         application/json:
@@ -33,7 +33,7 @@ post:
             items:
               type: number
             title: Response Sing Frame Volume Sing Frame Volume Post
-    "422":
+    '422':
       description: Validation Error
       content:
         application/json:

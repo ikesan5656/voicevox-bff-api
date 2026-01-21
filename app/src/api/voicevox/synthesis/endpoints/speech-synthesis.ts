@@ -5,9 +5,6 @@
  * VOICEVOX OSS の音声合成エンジンです。
  * OpenAPI spec version: latest
  */
-import axios from "axios";
-import type { AxiosRequestConfig, AxiosResponse } from "axios";
-
 import type {
   AudioQuery,
   CancellableSynthesisParams,
@@ -20,62 +17,91 @@ import type {
   SynthesisParams,
 } from "../../models";
 
+import { customInstance } from "../../../../lib/custom-instance";
+import type { BodyType } from "../../../../lib/custom-instance";
+
+type SecondParameter<T extends (...args: never) => unknown> = Parameters<T>[1];
+
 /**
  * @summary 音声合成する
  */
-export const synthesis = <TData = AxiosResponse<Blob>>(
-  audioQuery: AudioQuery,
+export const synthesis = (
+  audioQuery: BodyType<AudioQuery>,
   params: SynthesisParams,
-  options?: AxiosRequestConfig
-): Promise<TData> => {
-  return axios.post(`/synthesis`, audioQuery, {
-    responseType: "blob",
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance<Blob>>
+) => {
+  return customInstance<Blob>(
+    {
+      url: `/synthesis`,
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      data: audioQuery,
+      params,
+      responseType: "blob",
+    },
+    options
+  );
 };
 /**
  * @summary 音声合成する（キャンセル可能）
  */
-export const cancellableSynthesis = <TData = AxiosResponse<Blob>>(
-  audioQuery: AudioQuery,
+export const cancellableSynthesis = (
+  audioQuery: BodyType<AudioQuery>,
   params: CancellableSynthesisParams,
-  options?: AxiosRequestConfig
-): Promise<TData> => {
-  return axios.post(`/cancellable_synthesis`, audioQuery, {
-    responseType: "blob",
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance<Blob>>
+) => {
+  return customInstance<Blob>(
+    {
+      url: `/cancellable_synthesis`,
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      data: audioQuery,
+      params,
+      responseType: "blob",
+    },
+    options
+  );
 };
 /**
  * @summary 複数まとめて音声合成する
  */
-export const multiSynthesis = <TData = AxiosResponse<Blob>>(
+export const multiSynthesis = (
   audioQuery: AudioQuery[],
   params: MultiSynthesisParams,
-  options?: AxiosRequestConfig
-): Promise<TData> => {
-  return axios.post(`/multi_synthesis`, audioQuery, {
-    responseType: "blob",
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance<Blob>>
+) => {
+  return customInstance<Blob>(
+    {
+      url: `/multi_synthesis`,
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      data: audioQuery,
+      params,
+      responseType: "blob",
+    },
+    options
+  );
 };
 /**
  * 歌唱音声合成を行います。
  * @summary Frame Synthesis
  */
-export const frameSynthesis = <TData = AxiosResponse<Blob>>(
-  frameAudioQuery: FrameAudioQuery,
+export const frameSynthesis = (
+  frameAudioQuery: BodyType<FrameAudioQuery>,
   params: FrameSynthesisParams,
-  options?: AxiosRequestConfig
-): Promise<TData> => {
-  return axios.post(`/frame_synthesis`, frameAudioQuery, {
-    responseType: "blob",
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance<Blob>>
+) => {
+  return customInstance<Blob>(
+    {
+      url: `/frame_synthesis`,
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      data: frameAudioQuery,
+      params,
+      responseType: "blob",
+    },
+    options
+  );
 };
 /**
  * 指定されたベーススタイルに対してエンジン内の各キャラクターがモーフィング機能を利用可能か返します。
@@ -85,15 +111,21 @@ export const frameSynthesis = <TData = AxiosResponse<Blob>>(
 返り値のスタイルIDはstring型なので注意。
  * @summary 指定したスタイルに対してエンジン内のキャラクターがモーフィングが可能か判定する
  */
-export const morphableTargets = <TData = AxiosResponse<MorphableTargets200Item[]>>(
+export const morphableTargets = (
   morphableTargetsBody: number[],
   params?: MorphableTargetsParams,
-  options?: AxiosRequestConfig
-): Promise<TData> => {
-  return axios.post(`/morphable_targets`, morphableTargetsBody, {
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance<MorphableTargets200Item[]>>
+) => {
+  return customInstance<MorphableTargets200Item[]>(
+    {
+      url: `/morphable_targets`,
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      data: morphableTargetsBody,
+      params,
+    },
+    options
+  );
 };
 /**
  * 指定された2種類のスタイルで音声を合成、指定した割合でモーフィングした音声を得ます。
@@ -101,20 +133,28 @@ export const morphableTargets = <TData = AxiosResponse<MorphableTargets200Item[]
 モーフィングの割合は`morph_rate`で指定でき、0.0でベースのスタイル、1.0でターゲットのスタイルに近づきます。
  * @summary 2種類のスタイルでモーフィングした音声を合成する
  */
-export const synthesisMorphing = <TData = AxiosResponse<Blob>>(
-  audioQuery: AudioQuery,
+export const synthesisMorphing = (
+  audioQuery: BodyType<AudioQuery>,
   params: SynthesisMorphingParams,
-  options?: AxiosRequestConfig
-): Promise<TData> => {
-  return axios.post(`/synthesis_morphing`, audioQuery, {
-    responseType: "blob",
-    ...options,
-    params: { ...params, ...options?.params },
-  });
+  options?: SecondParameter<typeof customInstance<Blob>>
+) => {
+  return customInstance<Blob>(
+    {
+      url: `/synthesis_morphing`,
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      data: audioQuery,
+      params,
+      responseType: "blob",
+    },
+    options
+  );
 };
-export type SynthesisResult = AxiosResponse<Blob>;
-export type CancellableSynthesisResult = AxiosResponse<Blob>;
-export type MultiSynthesisResult = AxiosResponse<Blob>;
-export type FrameSynthesisResult = AxiosResponse<Blob>;
-export type MorphableTargetsResult = AxiosResponse<MorphableTargets200Item[]>;
-export type SynthesisMorphingResult = AxiosResponse<Blob>;
+export type SynthesisResult = NonNullable<Awaited<ReturnType<typeof synthesis>>>;
+export type CancellableSynthesisResult = NonNullable<
+  Awaited<ReturnType<typeof cancellableSynthesis>>
+>;
+export type MultiSynthesisResult = NonNullable<Awaited<ReturnType<typeof multiSynthesis>>>;
+export type FrameSynthesisResult = NonNullable<Awaited<ReturnType<typeof frameSynthesis>>>;
+export type MorphableTargetsResult = NonNullable<Awaited<ReturnType<typeof morphableTargets>>>;
+export type SynthesisMorphingResult = NonNullable<Awaited<ReturnType<typeof synthesisMorphing>>>;

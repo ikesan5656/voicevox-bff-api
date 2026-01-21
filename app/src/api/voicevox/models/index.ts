@@ -8,6 +8,8 @@
 
 export * from "./accentPhrase";
 export * from "./audioQuery";
+export * from "./audioQueryFromPresetParams";
+export * from "./audioQueryParams";
 export * from "./baseLibraryInfo";
 export * from "./bodySettingPostSettingPost";
 export * from "./bodySingFrameF0SingFrameF0Post";
@@ -33,6 +35,7 @@ export * from "./parseKanaBadRequest";
 export * from "./parseKanaBadRequestErrorArgs";
 export * from "./preset";
 export * from "./score";
+export * from "./singFrameAudioQueryParams";
 export * from "./speaker";
 export * from "./speakerInfo";
 export * from "./speakerStyle";

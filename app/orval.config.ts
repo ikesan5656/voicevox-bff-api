@@ -30,17 +30,23 @@ export default defineConfig({
     input: {
       target: "src/openapi/voicevox/openapi.formatted.yaml",
       filters: {
-        tags: ["speech_synthesis"],
+        tags: ["speech_synthesis", "create_query"],
       },
     },
     output: {
+      namingConvention: "camelCase",
       mode: "tags",
       target: "src/api/voicevox/synthesis/endpoints",
       schemas: "src/api/voicevox/models",
       clean: true,
       prettier: true,
       client: "axios-functions", // axiosだとファクトリ関数が作られてしまう
-      override: {},
+      override: {
+        mutator: {
+          path: "src/lib/custom-instance.ts",
+          name: "customInstance",
+        },
+      },
     },
   },
 });

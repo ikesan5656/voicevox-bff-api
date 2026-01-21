@@ -18,14 +18,14 @@ get:
         type: string
         title: Core Version
   responses:
-    "200":
+    '200':
       description: Successful Response
       content:
         application/json:
           schema:
             type: boolean
             title: Response Is Initialized Speaker Is Initialized Speaker Get
-    "422":
+    '422':
       description: Validation Error
       content:
         application/json:

@@ -1,5 +1,4 @@
 openapi: 3.1.0
-security: []
 info:
   title: VOICEVOX ENGINE OSS
   description: VOICEVOX OSS の音声合成エンジンです。
@@ -39,18 +38,18 @@ paths:
             type: string
             title: Core Version
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/AudioQuery"
-        "422":
+                $ref: '#/components/schemas/AudioQuery'
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /audio_query_from_preset:
     post:
       tags:
@@ -85,18 +84,18 @@ paths:
             type: string
             title: Core Version
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/AudioQuery"
-        "422":
+                $ref: '#/components/schemas/AudioQuery'
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /accent_phrases:
     post:
       tags:
@@ -148,27 +147,27 @@ paths:
             type: string
             title: Core Version
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/AccentPhrase"
+                  $ref: '#/components/schemas/AccentPhrase'
                 title: Response Accent Phrases Accent Phrases Post
-        "400":
+        '400':
           description: 読み仮名のパースに失敗
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ParseKanaBadRequest"
-        "422":
+                $ref: '#/components/schemas/ParseKanaBadRequest'
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /mora_data:
     post:
       tags:
@@ -195,24 +194,24 @@ paths:
             schema:
               type: array
               items:
-                $ref: "#/components/schemas/AccentPhrase"
+                $ref: '#/components/schemas/AccentPhrase'
               title: Accent Phrases
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/AccentPhrase"
+                  $ref: '#/components/schemas/AccentPhrase'
                 title: Response Mora Data Mora Data Post
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /mora_length:
     post:
       tags:
@@ -239,24 +238,24 @@ paths:
             schema:
               type: array
               items:
-                $ref: "#/components/schemas/AccentPhrase"
+                $ref: '#/components/schemas/AccentPhrase'
               title: Accent Phrases
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/AccentPhrase"
+                  $ref: '#/components/schemas/AccentPhrase'
                 title: Response Mora Length Mora Length Post
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /mora_pitch:
     post:
       tags:
@@ -283,24 +282,24 @@ paths:
             schema:
               type: array
               items:
-                $ref: "#/components/schemas/AccentPhrase"
+                $ref: '#/components/schemas/AccentPhrase'
               title: Accent Phrases
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/AccentPhrase"
+                  $ref: '#/components/schemas/AccentPhrase'
                 title: Response Mora Pitch Mora Pitch Post
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /synthesis:
     post:
       tags:
@@ -334,21 +333,21 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/AudioQuery"
+              $ref: '#/components/schemas/AudioQuery'
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             audio/wav:
               schema:
                 type: string
                 format: binary
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /cancellable_synthesis:
     post:
       tags:
@@ -380,21 +379,21 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/AudioQuery"
+              $ref: '#/components/schemas/AudioQuery'
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             audio/wav:
               schema:
                 type: string
                 format: binary
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /multi_synthesis:
     post:
       tags:
@@ -430,22 +429,22 @@ paths:
             schema:
               type: array
               items:
-                $ref: "#/components/schemas/AudioQuery"
+                $ref: '#/components/schemas/AudioQuery'
               title: Queries
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/zip:
               schema:
                 type: string
                 format: binary
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /sing_frame_audio_query:
     post:
       tags:
@@ -471,20 +470,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Score"
+              $ref: '#/components/schemas/Score'
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/FrameAudioQuery"
-        "422":
+                $ref: '#/components/schemas/FrameAudioQuery'
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /sing_frame_f0:
     post:
       tags:
@@ -509,9 +508,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Body_sing_frame_f0_sing_frame_f0_post"
+              $ref: '#/components/schemas/Body_sing_frame_f0_sing_frame_f0_post'
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
@@ -520,12 +519,12 @@ paths:
                 items:
                   type: number
                 title: Response Sing Frame F0 Sing Frame F0 Post
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /sing_frame_volume:
     post:
       tags:
@@ -550,9 +549,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Body_sing_frame_volume_sing_frame_volume_post"
+              $ref: '#/components/schemas/Body_sing_frame_volume_sing_frame_volume_post'
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
@@ -561,12 +560,12 @@ paths:
                 items:
                   type: number
                 title: Response Sing Frame Volume Sing Frame Volume Post
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /frame_synthesis:
     post:
       tags:
@@ -592,21 +591,21 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/FrameAudioQuery"
+              $ref: '#/components/schemas/FrameAudioQuery'
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             audio/wav:
               schema:
                 type: string
                 format: binary
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /connect_waves:
     post:
       tags:
@@ -624,19 +623,19 @@ paths:
               title: Waves
         required: true
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             audio/wav:
               schema:
                 type: string
                 format: binary
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /validate_kana:
     post:
       tags:
@@ -657,25 +656,25 @@ paths:
             title: Text
           description: 判定する対象の文字列
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
                 type: boolean
                 title: Response Validate Kana Validate Kana Post
-        "400":
+        '400':
           description: テキストが不正です
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ParseKanaBadRequest"
-        "422":
+                $ref: '#/components/schemas/ParseKanaBadRequest'
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /initialize_speaker:
     post:
       tags:
@@ -709,14 +708,14 @@ paths:
             type: string
             title: Core Version
       responses:
-        "204":
+        '204':
           description: Successful Response
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /is_initialized_speaker:
     get:
       tags:
@@ -738,19 +737,19 @@ paths:
             type: string
             title: Core Version
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
                 type: boolean
                 title: Response Is Initialized Speaker Is Initialized Speaker Get
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /supported_devices:
     get:
       tags:
@@ -766,18 +765,18 @@ paths:
             type: string
             title: Core Version
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SupportedDevicesInfo"
-        "422":
+                $ref: '#/components/schemas/SupportedDevicesInfo'
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /morphable_targets:
     post:
       tags:
@@ -807,7 +806,7 @@ paths:
                 type: integer
               title: Base Style Ids
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
@@ -816,14 +815,14 @@ paths:
                 items:
                   type: object
                   additionalProperties:
-                    $ref: "#/components/schemas/MorphableTargetInfo"
+                    $ref: '#/components/schemas/MorphableTargetInfo'
                 title: Response Morphable Targets Morphable Targets Post
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /synthesis_morphing:
     post:
       tags:
@@ -875,21 +874,21 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/AudioQuery"
+              $ref: '#/components/schemas/AudioQuery'
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             audio/wav:
               schema:
                 type: string
                 format: binary
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /presets:
     get:
       tags:
@@ -898,13 +897,13 @@ paths:
       description: エンジンが保持しているプリセットの設定を返します。
       operationId: get_presets
       responses:
-        "200":
+        '200':
           description: プリセットのリスト
           content:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/Preset"
+                  $ref: '#/components/schemas/Preset'
                 type: array
                 title: Response Get Presets Presets Get
   /add_preset:
@@ -918,23 +917,23 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Preset"
+              $ref: '#/components/schemas/Preset'
               description: 新しいプリセット。プリセットIDが既存のものと重複している場合は、新規のプリセットIDが採番されます。
         required: true
       responses:
-        "200":
+        '200':
           description: 追加したプリセットのプリセットID
           content:
             application/json:
               schema:
                 type: integer
                 title: Response Add Preset Add Preset Post
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /update_preset:
     post:
       tags:
@@ -946,23 +945,23 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Preset"
+              $ref: '#/components/schemas/Preset'
               description: 更新するプリセット。プリセットIDが更新対象と一致している必要があります。
         required: true
       responses:
-        "200":
+        '200':
           description: 更新したプリセットのプリセットID
           content:
             application/json:
               schema:
                 type: integer
                 title: Response Update Preset Update Preset Post
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /delete_preset:
     post:
       tags:
@@ -980,14 +979,14 @@ paths:
             title: Id
           description: 削除するプリセットのプリセットID
       responses:
-        "204":
+        '204':
           description: Successful Response
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /speakers:
     get:
       tags:
@@ -1003,21 +1002,21 @@ paths:
             type: string
             title: Core Version
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Speaker"
+                  $ref: '#/components/schemas/Speaker'
                 title: Response Speakers Speakers Get
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /speaker_info:
     get:
       tags:
@@ -1052,18 +1051,18 @@ paths:
             type: string
             title: Core Version
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SpeakerInfo"
-        "422":
+                $ref: '#/components/schemas/SpeakerInfo'
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /singers:
     get:
       tags:
@@ -1079,21 +1078,21 @@ paths:
             type: string
             title: Core Version
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Speaker"
+                  $ref: '#/components/schemas/Speaker'
                 title: Response Singers Singers Get
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /singer_info:
     get:
       tags:
@@ -1128,18 +1127,18 @@ paths:
             type: string
             title: Core Version
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SpeakerInfo"
-        "422":
+                $ref: '#/components/schemas/SpeakerInfo'
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /downloadable_libraries:
     get:
       tags:
@@ -1148,13 +1147,13 @@ paths:
       description: ダウンロード可能な音声ライブラリの情報を返します。
       operationId: downloadable_libraries
       responses:
-        "200":
+        '200':
           description: ダウンロード可能な音声ライブラリの情報リスト
           content:
             application/json:
               schema:
                 items:
-                  $ref: "#/components/schemas/DownloadableLibraryInfo"
+                  $ref: '#/components/schemas/DownloadableLibraryInfo'
                 type: array
                 title: Response Downloadable Libraries Downloadable Libraries Get
   /installed_libraries:
@@ -1165,13 +1164,13 @@ paths:
       description: インストールした音声ライブラリの情報を返します。
       operationId: installed_libraries
       responses:
-        "200":
+        '200':
           description: インストールした音声ライブラリの情報
           content:
             application/json:
               schema:
                 additionalProperties:
-                  $ref: "#/components/schemas/InstalledLibraryInfo"
+                  $ref: '#/components/schemas/InstalledLibraryInfo'
                 type: object
                 title: Response Installed Libraries Installed Libraries Get
   /install_library/{library_uuid}:
@@ -1194,14 +1193,14 @@ paths:
             title: Library Uuid
           description: 音声ライブラリのID
       responses:
-        "204":
+        '204':
           description: Successful Response
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /uninstall_library/{library_uuid}:
     post:
       tags:
@@ -1219,14 +1218,14 @@ paths:
             title: Library Uuid
           description: 音声ライブラリのID
       responses:
-        "204":
+        '204':
           description: Successful Response
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /user_dict:
     get:
       tags:
@@ -1238,13 +1237,13 @@ paths:
         単語の表層形(surface)は正規化済みの物を返します。
       operationId: get_user_dict_words
       responses:
-        "200":
+        '200':
           description: 単語のUUIDとその詳細
           content:
             application/json:
               schema:
                 additionalProperties:
-                  $ref: "#/components/schemas/UserDictWord"
+                  $ref: '#/components/schemas/UserDictWord'
                 type: object
                 title: Response Get User Dict Words User Dict Get
   /user_dict_word:
@@ -1283,7 +1282,7 @@ paths:
           in: query
           required: false
           schema:
-            $ref: "#/components/schemas/WordTypes"
+            $ref: '#/components/schemas/WordTypes'
             description: PROPER_NOUN（固有名詞）、COMMON_NOUN（普通名詞）、VERB（動詞）、ADJECTIVE（形容詞）、SUFFIX（語尾）のいずれか
           description: PROPER_NOUN（固有名詞）、COMMON_NOUN（普通名詞）、VERB（動詞）、ADJECTIVE（形容詞）、SUFFIX（語尾）のいずれか
         - name: priority
@@ -1297,19 +1296,19 @@ paths:
             title: Priority
           description: 単語の優先度（0から10までの整数）。数字が大きいほど優先度が高くなる。1から9までの値を指定することを推奨
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
                 type: string
                 title: Response Add User Dict Word User Dict Word Post
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /user_dict_word/{word_uuid}:
     put:
       tags:
@@ -1354,7 +1353,7 @@ paths:
           in: query
           required: false
           schema:
-            $ref: "#/components/schemas/WordTypes"
+            $ref: '#/components/schemas/WordTypes'
             description: PROPER_NOUN（固有名詞）、COMMON_NOUN（普通名詞）、VERB（動詞）、ADJECTIVE（形容詞）、SUFFIX（語尾）のいずれか
           description: PROPER_NOUN（固有名詞）、COMMON_NOUN（普通名詞）、VERB（動詞）、ADJECTIVE（形容詞）、SUFFIX（語尾）のいずれか
         - name: priority
@@ -1368,14 +1367,14 @@ paths:
             title: Priority
           description: 単語の優先度（0から10までの整数）。数字が大きいほど優先度が高くなる。1から9までの値を指定することを推奨。
       responses:
-        "204":
+        '204':
           description: Successful Response
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
     delete:
       tags:
         - user_dict_word
@@ -1392,14 +1391,14 @@ paths:
             title: Word Uuid
           description: 削除する言葉のUUID
       responses:
-        "204":
+        '204':
           description: Successful Response
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /import_user_dict:
     post:
       tags:
@@ -1423,18 +1422,18 @@ paths:
             schema:
               type: object
               additionalProperties:
-                $ref: "#/components/schemas/UserDictWord"
+                $ref: '#/components/schemas/UserDictWord'
               description: インポートするユーザー辞書のデータ
               title: Import Dict Data
       responses:
-        "204":
+        '204':
           description: Successful Response
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /version:
     get:
       tags:
@@ -1443,7 +1442,7 @@ paths:
       description: エンジンのバージョンを取得します。
       operationId: version
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
@@ -1458,7 +1457,7 @@ paths:
       description: 利用可能なコアのバージョン一覧を取得します。
       operationId: core_versions
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
@@ -1475,12 +1474,12 @@ paths:
       description: エンジンマニフェストを取得します。
       operationId: engine_manifest
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/EngineManifest"
+                $ref: '#/components/schemas/EngineManifest'
   /setting:
     get:
       tags:
@@ -1489,7 +1488,7 @@ paths:
       description: 設定ページを返します。
       operationId: setting_get
       responses:
-        "200":
+        '200':
           description: Successful Response
     post:
       tags:
@@ -1501,17 +1500,17 @@ paths:
         content:
           application/x-www-form-urlencoded:
             schema:
-              $ref: "#/components/schemas/Body_setting_post_setting_post"
+              $ref: '#/components/schemas/Body_setting_post_setting_post'
         required: true
       responses:
-        "204":
+        '204':
           description: Successful Response
-        "422":
+        '422':
           description: Validation Error
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/HTTPValidationError"
+                $ref: '#/components/schemas/HTTPValidationError'
   /:
     get:
       tags:
@@ -1520,7 +1519,7 @@ paths:
       description: ポータルページを返します。
       operationId: get_portal_page
       responses:
-        "200":
+        '200':
           description: Successful Response
           content:
             text/html:
@@ -1532,7 +1531,7 @@ components:
       properties:
         moras:
           items:
-            $ref: "#/components/schemas/Mora"
+            $ref: '#/components/schemas/Mora'
           type: array
           title: Moras
           description: モーラのリスト
@@ -1541,7 +1540,7 @@ components:
           title: Accent
           description: アクセント箇所
         pause_mora:
-          $ref: "#/components/schemas/Mora"
+          $ref: '#/components/schemas/Mora'
           title: Pause Mora
           description: アクセント句の末尾につく無音モーラ。null の場合は無音モーラを付けない。
         is_interrogative:
@@ -1559,7 +1558,7 @@ components:
       properties:
         accent_phrases:
           items:
-            $ref: "#/components/schemas/AccentPhrase"
+            $ref: '#/components/schemas/AccentPhrase'
           type: array
           title: Accent Phrases
           description: アクセント句のリスト
@@ -1590,7 +1589,7 @@ components:
         pauseLength:
           anyOf:
             - type: number
-            - type: "null"
+            - type: 'null'
           title: Pauselength
           description: 句読点などの無音時間。nullのときは無視される。デフォルト値はnull
         pauseLengthScale:
@@ -1609,7 +1608,7 @@ components:
         kana:
           type: string
           title: Kana
-          description: "[読み取り専用]AquesTalk 風記法によるテキスト。音声合成用のクエリとしては無視される"
+          description: '[読み取り専用]AquesTalk 風記法によるテキスト。音声合成用のクエリとしては無視される'
       type: object
       required:
         - accent_phrases
@@ -1626,7 +1625,7 @@ components:
     Body_setting_post_setting_post:
       properties:
         cors_policy_mode:
-          $ref: "#/components/schemas/CorsPolicyMode"
+          $ref: '#/components/schemas/CorsPolicyMode'
         allow_origin:
           type: string
           title: Allow Origin
@@ -1637,9 +1636,9 @@ components:
     Body_sing_frame_f0_sing_frame_f0_post:
       properties:
         score:
-          $ref: "#/components/schemas/Score"
+          $ref: '#/components/schemas/Score'
         frame_audio_query:
-          $ref: "#/components/schemas/FrameAudioQuery"
+          $ref: '#/components/schemas/FrameAudioQuery'
       type: object
       required:
         - score
@@ -1648,9 +1647,9 @@ components:
     Body_sing_frame_volume_sing_frame_volume_post:
       properties:
         score:
-          $ref: "#/components/schemas/Score"
+          $ref: '#/components/schemas/Score'
         frame_audio_query:
-          $ref: "#/components/schemas/FrameAudioQuery"
+          $ref: '#/components/schemas/FrameAudioQuery'
       type: object
       required:
         - score
@@ -1687,7 +1686,7 @@ components:
           description: 音声ライブラリのバイト数
         speakers:
           items:
-            $ref: "#/components/schemas/LibrarySpeaker"
+            $ref: '#/components/schemas/LibrarySpeaker'
           type: array
           title: Speakers
           description: 音声ライブラリに含まれるキャラクターのリスト
@@ -1741,13 +1740,13 @@ components:
           description: エンジンの利用規約
         update_infos:
           items:
-            $ref: "#/components/schemas/UpdateInfo"
+            $ref: '#/components/schemas/UpdateInfo'
           type: array
           title: Update Infos
           description: エンジンのアップデート情報
         dependency_licenses:
           items:
-            $ref: "#/components/schemas/LicenseInfo"
+            $ref: '#/components/schemas/LicenseInfo'
           type: array
           title: Dependency Licenses
           description: 依存関係のライセンス情報
@@ -1756,7 +1755,7 @@ components:
           title: Supported Vvlib Manifest Version
           description: エンジンが対応するvvlibのバージョン
         supported_features:
-          $ref: "#/components/schemas/SupportedFeatures"
+          $ref: '#/components/schemas/SupportedFeatures'
           description: エンジンが持つ機能
       type: object
       required:
@@ -1790,7 +1789,7 @@ components:
           description: フレームごとの音量
         phonemes:
           items:
-            $ref: "#/components/schemas/FramePhoneme"
+            $ref: '#/components/schemas/FramePhoneme'
           type: array
           title: Phonemes
           description: 音素のリスト
@@ -1829,7 +1828,7 @@ components:
         note_id:
           anyOf:
             - type: string
-            - type: "null"
+            - type: 'null'
           title: Note Id
           description: 音符のID
       type: object
@@ -1842,7 +1841,7 @@ components:
       properties:
         detail:
           items:
-            $ref: "#/components/schemas/ValidationError"
+            $ref: '#/components/schemas/ValidationError'
           type: array
           title: Detail
       type: object
@@ -1871,7 +1870,7 @@ components:
           description: 音声ライブラリのバイト数
         speakers:
           items:
-            $ref: "#/components/schemas/LibrarySpeaker"
+            $ref: '#/components/schemas/LibrarySpeaker'
           type: array
           title: Speakers
           description: 音声ライブラリに含まれるキャラクターのリスト
@@ -1893,9 +1892,9 @@ components:
     LibrarySpeaker:
       properties:
         speaker:
-          $ref: "#/components/schemas/Speaker"
+          $ref: '#/components/schemas/Speaker'
         speaker_info:
-          $ref: "#/components/schemas/SpeakerInfo"
+          $ref: '#/components/schemas/SpeakerInfo'
       type: object
       required:
         - speaker
@@ -1976,7 +1975,7 @@ components:
         id:
           anyOf:
             - type: string
-            - type: "null"
+            - type: 'null'
           title: Id
           description: ID
         key:
@@ -2100,7 +2099,7 @@ components:
       properties:
         notes:
           items:
-            $ref: "#/components/schemas/Note"
+            $ref: '#/components/schemas/Note'
           type: array
           title: Notes
           description: 音符のリスト
@@ -2121,7 +2120,7 @@ components:
           description: キャラクターのUUID
         styles:
           items:
-            $ref: "#/components/schemas/SpeakerStyle"
+            $ref: '#/components/schemas/SpeakerStyle'
           type: array
           title: Styles
           description: スタイルの一覧
@@ -2130,7 +2129,7 @@ components:
           title: Version
           description: キャラクターのバージョン
         supported_features:
-          $ref: "#/components/schemas/SpeakerSupportedFeatures"
+          $ref: '#/components/schemas/SpeakerSupportedFeatures'
           description: キャラクターの対応機能
       type: object
       required:
@@ -2152,7 +2151,7 @@ components:
           description: 立ち絵画像をbase64エンコードしたもの、あるいはURL
         style_infos:
           items:
-            $ref: "#/components/schemas/StyleInfo"
+            $ref: '#/components/schemas/StyleInfo'
           type: array
           title: Style Infos
           description: スタイルの追加情報
@@ -2480,7 +2479,7 @@ components:
         speakers:
           description: 音声ライブラリに含まれるキャラクターのリスト
           items:
-            $ref: "#/components/schemas/LibrarySpeaker"
+            $ref: '#/components/schemas/LibrarySpeaker'
           title: Speakers
           type: array
       required:

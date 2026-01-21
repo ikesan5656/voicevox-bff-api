@@ -12,7 +12,7 @@ get:
         type: string
         title: Core Version
   responses:
-    "200":
+    '200':
       description: Successful Response
       content:
         application/json:
@@ -21,7 +21,7 @@ get:
             items:
               $ref: ../components/schemas/Speaker.yaml
             title: Response Singers Singers Get
-    "422":
+    '422':
       description: Validation Error
       content:
         application/json:

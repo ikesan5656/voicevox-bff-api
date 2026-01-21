@@ -24,9 +24,9 @@ post:
           description: インポートするユーザー辞書のデータ
           title: Import Dict Data
   responses:
-    "204":
+    '204':
       description: Successful Response
-    "422":
+    '422':
       description: Validation Error
       content:
         application/json:

@@ -14,9 +14,9 @@ post:
         title: Id
       description: 削除するプリセットのプリセットID
   responses:
-    "204":
+    '204':
       description: Successful Response
-    "422":
+    '422':
       description: Validation Error
       content:
         application/json:

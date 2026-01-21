@@ -5,7 +5,7 @@ get:
   description: 設定ページを返します。
   operationId: setting_get
   responses:
-    "200":
+    '200':
       description: Successful Response
 post:
   tags:
@@ -20,9 +20,9 @@ post:
           $ref: ../components/schemas/Body_setting_post_setting_post.yaml
     required: true
   responses:
-    "204":
+    '204':
       description: Successful Response
-    "422":
+    '422':
       description: Validation Error
       content:
         application/json:

@@ -10,7 +10,8 @@
     "testing": "cross-env NODE_ENV=test nodemon --watch src --exec ts-node src/app.ts",
     "api:spec-convert": "redocly bundle ./src/openapi/voicevox/openapi.yaml -o ./src/openapi/voicevox/openapi.formatted.yaml --config .redocly.lint.with-translations.yaml",
     "api:spec-sprit": "redocly split ./src/openapi/voicevox/openapi.formatted.yaml --outDir ./src/openapi/voicevox/spec",
-    "openapi": "pnpm run api:spec-convert && pnpm run api:spec-sprit && pnpm orval"
+    "openapi": "pnpm run api:spec-convert && pnpm run api:spec-sprit && pnpm orval",
+    "bff-openapi-preview": "cd src/openapi/bff/spec/  && redocly preview"
   },
   "keywords": [],
   "author": "",

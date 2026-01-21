@@ -49,14 +49,14 @@ post:
         title: Priority
       description: 単語の優先度（0から10までの整数）。数字が大きいほど優先度が高くなる。1から9までの値を指定することを推奨
   responses:
-    "200":
+    '200':
       description: Successful Response
       content:
         application/json:
           schema:
             type: string
             title: Response Add User Dict Word User Dict Word Post
-    "422":
+    '422':
       description: Validation Error
       content:
         application/json:

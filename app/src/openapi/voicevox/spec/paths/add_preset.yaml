@@ -12,14 +12,14 @@ post:
           description: 新しいプリセット。プリセットIDが既存のものと重複している場合は、新規のプリセットIDが採番されます。
     required: true
   responses:
-    "200":
+    '200':
       description: 追加したプリセットのプリセットID
       content:
         application/json:
           schema:
             type: integer
             title: Response Add Preset Add Preset Post
-    "422":
+    '422':
       description: Validation Error
       content:
         application/json:

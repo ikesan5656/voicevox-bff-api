@@ -35,14 +35,14 @@ post:
             $ref: ../components/schemas/AudioQuery.yaml
           title: Queries
   responses:
-    "200":
+    '200':
       description: Successful Response
       content:
         application/zip:
           schema:
             type: string
             format: binary
-    "422":
+    '422':
       description: Validation Error
       content:
         application/json:
