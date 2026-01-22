@@ -13,6 +13,7 @@ import "reflect-metadata";
 import cors from "cors";
 import { checkJwt } from "./utils/auth0";
 import bodyParser from "body-parser";
+import { SynthesisController } from "./controllers/synthesisController";
 
 const app = express();
 const port = 3000;
@@ -28,7 +29,7 @@ app.use(
 );
 
 useExpressServer(app, {
-  controllers: [UserController],
+  controllers: [UserController, SynthesisController],
   middlewares: [checkJwt],
 });
 

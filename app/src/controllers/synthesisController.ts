@@ -9,38 +9,46 @@ import {
   Delete,
   UseBefore,
   HttpCode,
+  Res,
 } from "routing-controllers";
 import { checkJwt } from "../utils/auth0";
+import { audioQuery } from "../api/voicevox/synthesis/endpoints/create-query";
+import { synthesis } from "../api/voicevox/synthesis/endpoints/speech-synthesis";
+import { Response } from "express";
 
 @JsonController()
 @UseBefore(checkJwt)
 export class SynthesisController {
   @Post("/talk_synthesis")
   @HttpCode(200)
-  synthesis(@QueryParam("speaker") speaker: number, @QueryParam("text") text: string) {
+  async talkSynthesis(
+    @QueryParam("speaker") speaker: number,
+    @QueryParam("text") text: string,
+    @Res() response: Response
+  ) {
     try {
-    } catch (err) {}
+      const audioQueryRes = await audioQuery({
+        speaker: speaker,
+        text: text,
+      });
 
-    return "This action returns all users";
-  }
+      const defaultAudioQuery = audioQueryRes.data;
 
-  @Get("/user")
-  getUser(@QueryParam("id") id: number) {
-    return "This action returns user #" + id;
-  }
+      const res = await synthesis(
+        defaultAudioQuery,
+        { speaker: speaker },
+        { responseType: "arraybuffer" }
+      );
 
-  @Post("/user")
-  createUser(user: any) {
-    return "Saving user...";
-  }
+      const audioData = res.data as unknown as ArrayBuffer;
 
-  @Put("/user/:id")
-  updateUser(@Param("id") id: number, @Param("user") user: any) {
-    return "Updating a user...";
-  }
+      // 3. レスポンスヘッダーの設定とバイナリの返却
+      response.setHeader("Content-Type", "audio/wav");
 
-  @Delete("/user/:id")
-  deleteUser(@Param("id") id: number) {
-    return "Removing user...";
+      // Bufferに変換して送信
+      return response.send(Buffer.from(audioData));
+    } catch (err) {
+      console.log(err);
+    }
   }
 }
