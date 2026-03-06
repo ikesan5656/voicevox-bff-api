@@ -24,7 +24,8 @@
     "express-jwt": "^8.5.1",
     "jwks-rsa": "^3.2.0",
     "reflect-metadata": "^0.2.2",
-    "routing-controllers": "^0.10.4"
+    "routing-controllers": "^0.10.4",
+    "zod": "^4.3.5"
   },
   "devDependencies": {
     "@redocly/cli": "^2.14.5",

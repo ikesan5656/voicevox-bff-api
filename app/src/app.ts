@@ -31,12 +31,18 @@ app.use(
 useExpressServer(app, {
   controllers: [UserController, SynthesisController],
   middlewares: [checkJwt],
+  defaultErrorHandler: false,
 });
 
 // エラーハンドリング
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.error("エラーメッセージ:", err.message);
-  res.status(err.status || 500).json({ message: err.message ?? "エラーが発生しました。" });
+  if (err.name === "UnauthorizedError") {
+    // 認証エラーの場合は403
+    res.status(403).json({ message: "認証エラー: アクセスが拒否されました" });
+  } else {
+    res.status(500).json({ message: "不明なエラーが発生しました" });
+  }
 });
 
 // サーバー起動
